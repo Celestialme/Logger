@@ -1,6 +1,6 @@
 <script lang="ts">
 export let angle:Number=60;
-export let size:Number=30;
+export let size:Number=18;
 export let color:string="#A5A5A5";
 let arrow:HTMLDivElement;
 $:{ if(arrow){
@@ -25,13 +25,9 @@ $:{ if(arrow){
     }
     .arrow{
         display: inline-block;
-        --angle:55deg;
-        --size:30px;
-        --color:#A5A5A5;
         position: relative;
         width:var(--size);
         height:var(--size);
-        margin-bottom:3px;
      
     }
     .arrow::before{
@@ -39,11 +35,13 @@ $:{ if(arrow){
         transform-origin: right top;
         border-bottom-right-radius: 5px;
         border-top-right-radius: 5px;
+        height:3px;
     }
     .arrow::after{
         transform: rotate(var(--angle));
         transform-origin: right bottom;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+        height:3px;
     }
 </style>

@@ -104,7 +104,7 @@
         
         flex-direction: column;
         flex-grow:1;
-        border:10px solid #5C5C5C;
+        border:5px solid #5C5C5C;
         border-top: none;
  
     }
@@ -112,12 +112,12 @@
         overflow-y: auto;
         flex-basis: 0px;
         flex-grow: 1;
-        border-bottom:10px solid #5C5C5C;
-        padding-bottom:50px;
+        border-bottom:5px solid #5C5C5C;
+        padding-bottom:30px;
     }
     .input-container{
         display:flex;
-        gap:30px;
+        gap:20px;
         align-items: center;
         padding:10px
     }
@@ -125,18 +125,18 @@
         font-family: 'Rajdhani', sans-serif;
         flex-grow: 1;
         background:transparent;
-        font-size: 27px;
-        padding:10px;
+        font-size: 20px;
+        padding:2px;
         outline:none;
         border:none;
         color:white;
     }
     .clock{
-        width:100px;
+        width:70px;
         margin-top: 5px;
         margin-left:10px;
         font-family: 'Gemunu Libre', sans-serif;
-        font-size: 30px;
+        font-size: 20px;
         color:white;
     }
    

@@ -27,12 +27,12 @@
 <style>
     .vertical{
         cursor:e-resize;
-        width:10px;
+        width:5px;
         background-color:  #5C5C5C;
     }
     .horizontal{
         cursor:n-resize;
-        height:10px;
+        height:5px;
         background-color:  #5C5C5C;
     }
 </style>
