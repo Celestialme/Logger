@@ -15,28 +15,35 @@
     });
 
 </script>
-
-{#each $logs as log}
-<div> 
-    <span class="clock">{log.time}</span>
-    <Arrow angle={50} size={10} color="#F9BD23"/>
-    <span class="log">{log.log}</span>
+<div class="padding">
+    {#each $logs as log}
+    <div> 
+        <span class="clock">{log.time}</span>
+        <Arrow angle={30} size={8} thickness={1} color="#F9BD23"/>
+        <span class="log">{log.log}</span>
+    </div>
+    {/each}
 </div>
-{/each}
 <style>
    
     span.clock{
         margin-left: 15px;
         display: inline-block;
-        width:70px;
+        width:50px;
         font-family: 'Gemunu Libre', sans-serif;
         color:#D89696;
-        font-size: 18px;
+        font-size: 14px;
     }
     span.log{
-        margin-left: 15px;
+        margin-left: 5px;
         font-family: 'Gemunu Libre', sans-serif;
         color:#D9D9D9;
-        font-size: 18px;
+        font-size: 14px;
+       
+    }
+    .padding{
+        height: 100%;
+    overflow-y: auto;
+    line-height: 15px;
     }
 </style>

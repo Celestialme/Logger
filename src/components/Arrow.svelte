@@ -1,12 +1,14 @@
 <script lang="ts">
 export let angle:Number=60;
-export let size:Number=18;
+export let size:Number=14;
+export let thickness:Number=2;
 export let color:string="#A5A5A5";
 let arrow:HTMLDivElement;
 $:{ if(arrow){
     arrow.style.setProperty("--size",size+"px")
     arrow.style.setProperty("--angle",angle+"deg")
     arrow.style.setProperty("--color",color)
+    arrow.style.setProperty("--thickness",thickness+"px")
 }
     }
 </script>
@@ -18,7 +20,7 @@ $:{ if(arrow){
     content: "";
     background-color: var(--color);
     width: var(--size);
-    height: 5px;
+    height:var(--thickness);
     top: 50%;
     
     
@@ -35,13 +37,13 @@ $:{ if(arrow){
         transform-origin: right top;
         border-bottom-right-radius: 5px;
         border-top-right-radius: 5px;
-        height:3px;
+      
     }
     .arrow::after{
         transform: rotate(var(--angle));
         transform-origin: right bottom;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
-        height:3px;
+       
     }
 </style>

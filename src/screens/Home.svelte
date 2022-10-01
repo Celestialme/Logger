@@ -113,12 +113,12 @@
         flex-basis: 0px;
         flex-grow: 1;
         border-bottom:3px solid #5C5C5C;
-        padding-bottom:2px;
+        padding:5px 0;
         
     }
     .input-container{
         display:flex;
-        gap:5px;
+        gap:2px;
         align-items: center;
         padding:5px
     }
@@ -137,9 +137,11 @@
         width:70px;
         margin-top: 2px;
         margin-left:10px;
+        margin-right: 5px;
         font-family: 'Gemunu Libre', sans-serif;
-        font-size: 22px;
+        font-size: 20px;
         color:white;
+
     }
    
 </style>
