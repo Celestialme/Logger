@@ -24,9 +24,7 @@
 </div>
 {/each}
 <style>
-    div{
-        padding:2px;
-    }
+   
     span.clock{
         margin-left: 15px;
         display: inline-block;

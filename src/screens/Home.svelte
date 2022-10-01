@@ -10,7 +10,7 @@
     import Logs from  "@src/components/Logs.svelte"
     import Arrow from "@src/components/Arrow.svelte";
     import { getClock } from "@src/utils/utils";
-    import { onDestroy, onMount } from "svelte";
+    import { onDestroy, onMount, tick } from "svelte";
     import {logs} from "@src/store/store"
     import { invoke } from '@tauri-apps/api/tauri'
     function addLog(){
@@ -19,7 +19,7 @@
         $logs = $logs
         invoke("write_log",{log:`${log.time} > ${log.log}`});
         inputValue="";
-        logs_container.scrollTop = logs_container.scrollHeight + 200
+        tick().then(()=>logs_container.scrollTop = logs_container.scrollHeight)
     }
     onMount(()=>{
     timer = setInterval(()=>time = getClock(),1000)
@@ -112,18 +112,20 @@
         overflow-y: auto;
         flex-basis: 0px;
         flex-grow: 1;
-        border-bottom:5px solid #5C5C5C;
-        padding-bottom:30px;
+        border-bottom:3px solid #5C5C5C;
+        padding-bottom:2px;
+        
     }
     .input-container{
         display:flex;
-        gap:20px;
+        gap:5px;
         align-items: center;
-        padding:10px
+        padding:5px
     }
     .input-container input{
         font-family: 'Rajdhani', sans-serif;
         flex-grow: 1;
+        margin-left:10px;
         background:transparent;
         font-size: 20px;
         padding:2px;
@@ -133,10 +135,10 @@
     }
     .clock{
         width:70px;
-        margin-top: 5px;
+        margin-top: 2px;
         margin-left:10px;
         font-family: 'Gemunu Libre', sans-serif;
-        font-size: 20px;
+        font-size: 22px;
         color:white;
     }
    
