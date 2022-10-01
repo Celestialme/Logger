@@ -1,7 +1,7 @@
 <script lang="ts">
     let left_panel:HTMLDivElement;
     let top_panel:HTMLDivElement;
-    let logs_container:HTMLDivElement;
+    let wrapper:HTMLDivElement;
     let inputValue:string="";
     let time:string=getClock();
     let timer:NodeJS.Timer;
@@ -19,7 +19,7 @@
         $logs = $logs
         invoke("write_log",{log:`${log.time} > ${log.log}`});
         inputValue="";
-        tick().then(()=>logs_container.scrollTop = logs_container.scrollHeight)
+        tick().then(()=>wrapper.scrollTop = wrapper.scrollHeight)
     }
     onMount(()=>{
     timer = setInterval(()=>time = getClock(),1000)
@@ -47,8 +47,10 @@
     <Resizer class="horizontal" {left_panel} {top_panel}/>
 
     <div class="bottom-panel" >
-        <div class="logs-container" bind:this={logs_container}>
-            <Logs />
+        <div class="logs-container" >
+            <div class="wrapper" bind:this={wrapper}>
+                <Logs />
+            </div>
         </div>
 
         <div class="input-container">
@@ -142,6 +144,11 @@
         font-size: 20px;
         color:white;
 
+    }
+    .wrapper{
+    height: 100%;
+    overflow-y: auto;
+    line-height: 15px;
     }
    
 </style>

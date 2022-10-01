@@ -2,6 +2,7 @@
     import Arrow from "./Arrow.svelte";
     import {logs} from "@src/store/store"
     import { invoke } from '@tauri-apps/api/tauri'
+    import {hashTag} from "@src/utils/utils"
     let data = ""
   
     invoke("read_logs").then((_logs)=>{data = _logs as string
@@ -15,15 +16,15 @@
     });
 
 </script>
-<div class="padding">
+
     {#each $logs as log}
     <div> 
         <span class="clock">{log.time}</span>
         <Arrow angle={30} size={8} thickness={1} color="#F9BD23"/>
-        <span class="log">{log.log}</span>
+        <span class="log">{@html hashTag(log.log,"#9F9F9F")}</span>
     </div>
     {/each}
-</div>
+
 <style>
    
     span.clock{
@@ -41,9 +42,5 @@
         font-size: 14px;
        
     }
-    .padding{
-        height: 100%;
-    overflow-y: auto;
-    line-height: 15px;
-    }
+  
 </style>
